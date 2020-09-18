@@ -50,7 +50,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Styling file
-gem 'bulma-rails', '~> 0.9.0'
+gem 'bootstrap', '~> 4.5', '>= 4.5.2'
 
-#Simple form package for filing forms
-gem 'simple_form', '~> 5.0', '>= 5.0.2'

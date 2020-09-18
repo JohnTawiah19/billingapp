@@ -1,0 +1,16 @@
+<div class="container mt-3" > 
+<h5 class="title m-2 " style="float: right"> <%= link_to 'Create Timesheet', new_timesheet_path %> </h5>
+ 
+ <p> Click on your name to see your timesheet for a specific project </p>
+ <% @timesheet.each do |lawyer| %>
+<div class="card m-2" style="width: 10rem;">
+  <div class="card-body">
+    <p class="card-title">
+    <%= link_to lawyer.firstname+ ' ' +lawyer.lastname, lawyer%>
+    </p>
+  </div>
+</div>
+<% end %>
+
+</div>
+
