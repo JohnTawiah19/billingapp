@@ -1,0 +1,53 @@
+<div class="container mt-3" > 
+   <h3> Enter the your details below </h3>
+
+   <%# Timesheet form %>
+   <div style="width: 300px">
+    <%= form_for @timesheet, url: timesheets_path do |f|%>
+    <p>
+    <%= f.label :firstname %><br>
+    <%= f.text_field( :firstname, {:class => 'form-control form-control-sm'}) %>
+   </p>
+    <p>
+    <%= f.label :lastname %><br>
+    <%= f.text_field( :lastname, {:class => 'form-control form-control-sm'}) %>
+   </p>
+
+    <p>
+        <%= f.label :billing_rate %><br>
+        <%= f.number_field( :billing_rate, {:class => 'form-control form-control-sm'}) %>
+    </p>
+
+    <%= f.fields_for :projects do |s| %>
+    <legend class="legend"> Project </legend>
+    <p>
+    <%= s.label :company %> <br>
+    <%= s.text_field(:company, {:class => 'form-control form-control-sm'})%>
+    </p>
+
+    <p>
+    <%= s.label :date %> <br>
+    <%= s.date_field(:date, {:class => 'form-control form-control-sm'})%>
+    </p> 
+    <p>
+    <%= s.label :start_time %> <br>
+    <%= s.time_field(:start_time, {:class => 'form-control form-control-sm'}
+    )%>
+    </p>
+    <p>
+    <%= s.label :end_time %> <br>
+    <%= s.time_field(:end_time, {:class => 'form-control form-control-sm'})%>
+    </p>
+    
+    <% end %>
+    <p>
+        <%= f.submit({:class => 'btn btn-primary'}) %>
+    </p>
+
+    <% end %>
+   </div>
+
+
+</div>
+
+ 

@@ -10,6 +10,18 @@
   </head>
 
   <body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto ml-5" >
+      <li class="nav-item">
+      <%= link_to 'Timesheets', root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+      <%= link_to 'Invoices', invoices_path, class: 'nav-link' %>
+      </li> 
+    </ul>
+</nav>
+
     <%= yield %>
   </body>
 </html>

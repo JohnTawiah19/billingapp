@@ -1,0 +1,10 @@
+<div class="container">
+<p> Click on Company to see invoice </p>
+<hr>
+<% @project.each do |invoice|%>
+    <div class="title m-1">
+        <%= link_to invoice.company, invoice_path(invoice)%>
+    </div>
+<% end %>
+
+</div>

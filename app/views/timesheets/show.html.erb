@@ -1,0 +1,33 @@
+<div class="container">
+<h3>Your timesheet </h3>
+<hr>
+<p> 
+ <%= @timesheet.firstname%>
+ <%= @timesheet.lastname%>
+</p>
+
+<p> Biliing rate: 
+ $<%= @timesheet.billing_rate%>
+</p>
+<p>Project company:  
+<%= @project.company%>
+</p>
+<p>Project date:  
+<%= @project.date%>
+</p>
+<p>Start time: 
+<%= @project.start_time%>
+</p>
+<p>End time:
+<%= @project.end_time%>
+</p>
+
+<%= link_to 'Edit', edit_timesheet_path(@timesheet), 
+                  :class => 'btn btn-info'%>
+
+<%= link_to 'Delete', timesheet_path(@timesheet),
+                    method: :delete,
+                    data: {confirm: 'Are you sure'},
+                    :class => 'btn btn-danger' 
+%>
+</div>
