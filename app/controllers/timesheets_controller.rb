@@ -1,6 +1,7 @@
 class TimesheetsController < ApplicationController
     def index
         @timesheet = Timesheet.all
+        @project = Project.all
     end
 
     def new
@@ -31,10 +32,12 @@ class TimesheetsController < ApplicationController
 
     def update 
         @timesheet = Timesheet.find(params[:id])
+        @project = Project.find_by timesheet_id:(params[:id])
 
-        if @timesheet.update(timesheet_params)
+        if @timesheet.update(timesheet_params) && @project.update(project_params)
             redirect_to @timesheet
         else
+            @timesheet.projects unless @timesheet.projects.any?
             render 'edit'
         end
 
@@ -55,5 +58,9 @@ class TimesheetsController < ApplicationController
         .permit(:firstname, :lastname, :billing_rate,
                 projects_attributes: [:company, :date, :start_time, :end_time]
         )
+    end
+
+    def project_params
+        params.require(:timesheet).permit(:company, :date, :start_time, :end_time)
     end
 end

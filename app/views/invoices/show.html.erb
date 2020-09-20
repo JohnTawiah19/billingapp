@@ -1,23 +1,35 @@
 <div class="container">
-<p> Invoice page </p>
+  <p> <%=@project.company %> Invoice</p>
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Employee Name</th>
-      <th scope="col">Unit Price</th>
-      <th scope="col">Total hours</th>
-      <th scope="col">Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Total hours</th>
+        <th scope="col">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
 
-  </tbody>
+    <%# <% for @timesheet.each do |lawyer|%> %>
+      <tr>
+        <th scope="row">
+          <%= @timesheet.firstname %> 
+          <%= @timesheet.lastname%>
+        </th>
+        <td>
+          <%= @timesheet.billing_rate%>
+        </td>
+        <td>
+          <%= time_diff(@project.start_time, @project.end_time)%> hrs    
+        </td>
+        <td>$
+           <% time = time_diff(@project.start_time, @project.end_time)%>
+          <%= total_cost(@timesheet.billing_rate, time)%>
+        </td>
+      </tr>
+    <%# <% end %> %>
+    </tbody>
 </table>
 </div>

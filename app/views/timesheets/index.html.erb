@@ -3,13 +3,18 @@
  
  <p> Click on your name to see your timesheet for a specific project </p>
  <% @timesheet.each do |lawyer| %>
-<div class="card m-2" style="width: 10rem;">
-  <div class="card-body">
-    <p class="card-title">
-    <%= link_to lawyer.firstname+ ' ' +lawyer.lastname, lawyer%>
+ <% @project.each do |project| %>
+ <%if lawyer.id == project.id%>
+<div class="card m-2" style="width: 15rem;">
+    <p class="card-title pl-2 pt-2">
+    <%= link_to lawyer.firstname+ ' ' +lawyer.lastname, lawyer%> ---
+    <%=project.company%>
     </p>
-  </div>
 </div>
+
+<% end %>
+
+<% end %>
 <% end %>
 
 </div>

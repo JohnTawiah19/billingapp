@@ -1,5 +1,5 @@
 <div class="container">
-<h3>Your timesheet </h3>
+<h3>Your timesheet for <%= @project.company %></h3>
 <hr>
 <p> 
  <%= @timesheet.firstname%>
@@ -16,10 +16,10 @@
 <%= @project.date%>
 </p>
 <p>Start time: 
-<%= @project.start_time%>
+<%= Time.at(@project.start_time).utc.strftime "%H:%M" %>
 </p>
 <p>End time:
-<%= @project.end_time%>
+<%= Time.at(@project.end_time).utc.strftime "%H:%M" %>
 </p>
 
 <%= link_to 'Edit', edit_timesheet_path(@timesheet), 
