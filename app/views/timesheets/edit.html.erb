@@ -5,12 +5,12 @@
     <div class="form">
      <%# Timesheet form %>
     <div style="width: 300px">
-        <%= form_for :timesheet, url: timesheet_path(@timesheet), method: :patch do |f|%>
+        <%= form_for @timesheet, url: timesheet_path(@timesheet), method: :patch do |f|%>
         <p>
         <%= f.label :firstname %><br>
         <%= f.text_field( :firstname, {:class => 'form-control form-control-sm'}) %>
         </p>
-        <p>
+        <p> 
             <%= f.label :lastname %><br>
             <%= f.text_field( :lastname, {:class => 'form-control form-control-sm'}) %>
         </p>
@@ -33,8 +33,7 @@
         </p> 
         <p>
         <%= s.label :start_time %> <br>
-        <%= s.time_field(:start_time, {:class => 'form-control form-control-sm'}
-        )%>
+        <%= s.time_field(:start_time, {:class => 'form-control form-control-sm'})%>
         </p>
         <p>
         <%= s.label :end_time %> <br>
