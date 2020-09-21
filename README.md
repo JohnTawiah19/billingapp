@@ -16,7 +16,8 @@ Initial plan was to create a relational database with the timesheet and the proj
 The data is then fetched and used to generate an invoice. A few struggles with the framework made it difficult to
 implement the solution as I initially intended. And I would love to get feedback on what I did wrong and how to improve the application better.
 
-This README would normally document whatever steps are necessary to get the
+
+### This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
