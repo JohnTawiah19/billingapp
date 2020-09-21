@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
     def index
-        @project = Project.all.uniq
+        @project = Project.all
     end
 
     def show
