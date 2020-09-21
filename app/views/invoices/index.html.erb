@@ -3,7 +3,7 @@
 <hr>
 <% @project.each do |invoice|%>
     <div class="title m-1">
-        <%= link_to invoice.company, invoice_path(invoice)%>
+        <%= link_to invoice.company, invoice_path(invoice.id)%>
     </div>
 <% end %>
 

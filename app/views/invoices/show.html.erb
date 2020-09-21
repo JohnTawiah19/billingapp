@@ -1,5 +1,5 @@
 <div class="container">
-  <p> <%=@project.company %> Invoice</p>
+  <p> <strong> <%=@project.company %> </strong> Invoice</p>
 
   <table class="table">
     <thead class="thead-dark">
@@ -12,7 +12,6 @@
     </thead>
     <tbody>
 
-    <%# <% for @timesheet.each do |lawyer|%> %>
       <tr>
         <th scope="row">
           <%= @timesheet.firstname %> 
@@ -26,10 +25,9 @@
         </td>
         <td>$
            <% time = time_diff(@project.start_time, @project.end_time)%>
-          <%= total_cost(@timesheet.billing_rate, time)%>
+          <%= cost = total_cost(@timesheet.billing_rate, time)%>
         </td>
       </tr>
-    <%# <% end %> %>
     </tbody>
 </table>
 </div>
