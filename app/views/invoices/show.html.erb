@@ -14,6 +14,7 @@
 <% @client.each do |client|%>
 <% @project.each do |project|%>
 <% if client.id == project.id%>
+
       <tr>
         <th scope="row">
           <%= client.firstname %> 
@@ -29,15 +30,17 @@
            <% time = time_diff(project.start_time, project.end_time)%>
           <%= cost = total_cost(client.billing_rate, time)%>
         </td>
-      </tr>
+       
 <% end %>   
 <% end %>
 <% end %>
-<tr>
-<th> </th>
-<td><strong>Total: </strong> </td>
- </tr>
-
+ <tr>
+        <th> </th>
+        <td> </td>
+        <td><strong>Total: </strong> </td>
+        <td>$ <%= total(@client, @project)%> </td>
+        </tr>
+      </tr>
     </tbody>
 </table>
 </div>
