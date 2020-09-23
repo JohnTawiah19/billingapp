@@ -14,8 +14,8 @@ project being worked on. The application is built on the ruby on rails framework
 
 Initial plan was to create a relational database with the timesheet and the project as a relation. An employee fill a form that populates the database
 The data is then fetched and used to generate an invoice. And I would love to get feedback on how to improve the application better.
-Since the frontend was not necessary, I didn't focus too much on it and a later version with a better frontend would have a limited number of companies which 
-employee would select from in order to reduce errors from typing in the company name. This would prevent the application from generating invoices for companies
+Since the frontend was not necessary, I didn't focus too much on it and a later version with a better frontend would have a limited number of companies which an
+employee would select from in order to reduce logical errors that would occur from typing in the company name. This would prevent the application from generating invoices for companies
 which do not exist. The names and number of companies would be increased and reduced by the finance team and the employee would select from the available list.
 
 
