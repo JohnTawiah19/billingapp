@@ -9,4 +9,20 @@ module InvoicesHelper
         total = rate * time.to_f
         return total
     end
+
+    def total(client, project)
+        total = []
+        client.each do |client|
+        project.each do |project|
+        if client.id == project.id
+            time = time_diff(project.start_time, project.end_time)
+            cost = total_cost(client.billing_rate, time)
+            total.push(cost)
+
+        end
+        end
+        end
+        return total.sum
+
+    end
 end
