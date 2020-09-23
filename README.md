@@ -25,9 +25,7 @@ application up and running.
 Things you may want to cover:
 ra
 
-- Ruby version
- * rails version 6.0.3.3
- * ruby version 2.6.5p114
+- Ruby version (rails version 6.0.3.3,  ruby version 2.6.5p114)
 
 - System dependencies
 
