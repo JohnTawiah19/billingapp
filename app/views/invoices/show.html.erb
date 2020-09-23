@@ -1,5 +1,5 @@
 <div class="container">
-  <p> <strong> <%=@project.company %> </strong> Invoice</p>
+  <p> <strong> <%=params[:id] %> </strong> Invoice</p>
 
   <table class="table">
     <thead class="thead-dark">
@@ -11,23 +11,33 @@
       </tr>
     </thead>
     <tbody>
-
+<% @client.each do |client|%>
+<% @project.each do |project|%>
+<% if client.id == project.id%>
       <tr>
         <th scope="row">
-          <%= @timesheet.firstname %> 
-          <%= @timesheet.lastname%>
+          <%= client.firstname %> 
+          <%= client.lastname%>
         </th>
         <td>
-          <%= @timesheet.billing_rate%>
+          <%= client.billing_rate%>
         </td>
         <td>
-          <%= time_diff(@project.start_time, @project.end_time)%> hrs    
+          <%= time_diff(project.start_time, project.end_time)%> hrs    
         </td>
         <td>$
-           <% time = time_diff(@project.start_time, @project.end_time)%>
-          <%= cost = total_cost(@timesheet.billing_rate, time)%>
+           <% time = time_diff(project.start_time, project.end_time)%>
+          <%= cost = total_cost(client.billing_rate, time)%>
         </td>
       </tr>
+<% end %>   
+<% end %>
+<% end %>
+<tr>
+<th> </th>
+<td><strong>Total: </strong> </td>
+ </tr>
+
     </tbody>
 </table>
 </div>
