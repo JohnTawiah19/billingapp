@@ -13,8 +13,7 @@ project being worked on. The application is built on the ruby on rails framework
 ### Design assumptions
 
 Initial plan was to create a relational database with the timesheet and the project as a relation. An employee fill a form that populates the database
-The data is then fetched and used to generate an invoice. A few struggles with the framework made it difficult to
-implement the solution as I initially intended. And I would love to get feedback on what I did wrong and how to improve the application better.
+The data is then fetched and used to generate an invoice. And I would love to get feedback on what I did wrong and how to improve the application better.
 
 
 ### This README would normally document whatever steps are necessary to get the
