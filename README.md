@@ -8,7 +8,7 @@ project being worked on. The application is built on the ruby on rails framework
 ### To run this application install rails framework
 
 - run bundle to install the necessary gems
-  run the rails server "rails s"
+ - run the rails server "rails s"
 
 ### Design assumptions
 
